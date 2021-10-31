@@ -1,0 +1,13 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Edit EmploiEnseignant{% endblock %}
+
+{% block body %}
+    <h1>Edit EmploiEnseignant</h1>
+
+    {{ include('emploi_enseignant/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('emploi_enseignant_index') }}">back to list</a>
+
+    {{ include('emploi_enseignant/_delete_form.html.twig') }}
+{% endblock %}

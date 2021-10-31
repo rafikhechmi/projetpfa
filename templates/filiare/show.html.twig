@@ -1,0 +1,26 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Filiare{% endblock %}
+
+{% block body %}
+    <h1>Filiare</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ filiare.id }}</td>
+            </tr>
+            <tr>
+                <th>NomFliare</th>
+                <td>{{ filiare.nomFliare }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('filiare_index') }}">back to list</a>
+
+    <a href="{{ path('filiare_edit', {'id': filiare.id}) }}">edit</a>
+
+    {{ include('filiare/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}EmploiGroupe{% endblock %}
+
+{% block body %}
+    <h1>EmploiGroupe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ emploi_groupe.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('emploi_groupe_index') }}">back to list</a>
+
+    <a href="{{ path('emploi_groupe_edit', {'id': emploi_groupe.id}) }}">edit</a>
+
+    {{ include('emploi_groupe/_delete_form.html.twig') }}
+{% endblock %}

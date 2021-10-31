@@ -1,0 +1,35 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}EmploiGroupe index{% endblock %}
+
+{% block body %}
+    <h1>EmploiGroupe index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emploi_groupe in emploi_groupes %}
+            <tr>
+                <td>{{ emploi_groupe.id }}</td>
+                <td><a href="{{ asset('uploads/brochures/' ~ emploi_groupe.brochure) }}">View brochure (PDF)</a></td>
+
+                <td>
+                    <a href="{{ path('emploi_groupe_show', {'id': emploi_groupe.id}) }}">show</a>
+                    <a href="{{ path('emploi_groupe_edit', {'id': emploi_groupe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('emploi_groupe_new') }}">Create new</a>
+{% endblock %}
